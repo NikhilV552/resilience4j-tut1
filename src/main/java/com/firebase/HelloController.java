@@ -33,6 +33,11 @@ public class HelloController {
 		return "HELLO WORKING";
 	}
 	
+	@GetMapping("/welcome/{name}")
+	public String sayWelcome(@PathVariable("name")String username) {
+		return "Welcome "+username+"to the first GCP deployed demo application";
+	}
+	
 	public String errorMethod(Exception e) {
 		return e.getLocalizedMessage();
 	}
